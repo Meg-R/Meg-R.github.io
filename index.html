@@ -1,41 +1,298 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meggie Rajendran | Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+    :root{
+      --bg:#0b1220;
+      --card:#0f172a;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --border: rgba(148,163,184,0.25);
+      --accent:#38bdf8;
+      --accent2:#22c55e;
     }
-    h1 {
-      text-align: center;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height:1.6;
+      color:var(--text);
+      background: radial-gradient(circle at top, #172554 0, var(--bg) 55%, var(--bg) 100%);
+      padding: 32px 16px;
     }
-    .card {
-      border: 1px solid #ddd;
-      padding: 16px;
-      margin-top: 16px;
-      border-radius: 8px;
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width: 980px; margin: 0 auto;}
+    header{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      padding: 8px 6px 18px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 18px;
     }
+    h1{margin:0; font-size: clamp(1.9rem, 2.8vw, 2.4rem);}
+    .subtitle{margin:6px 0 0; color: var(--muted); font-size: 1rem;}
+    .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px; border-radius:999px;
+      background: rgba(15,23,42,0.75);
+      border:1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 14px;
+    }
+    @media (max-width: 860px){
+      .grid{grid-template-columns: 1fr;}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(15,23,42,0.95), rgba(15,23,42,0.85));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 16px 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+    h2{
+      margin:0 0 10px;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+    .muted{color: var(--muted);}
+    ul{margin: 8px 0 0 18px; padding:0;}
+    li{margin: 6px 0;}
+    .kpi{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px;
+    }
+    .kpi .box{
+      flex: 1;
+      min-width: 180px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 10px 12px;
+      background: rgba(2,6,23,0.25);
+    }
+    .box .label{color: var(--muted); font-size: 0.85rem;}
+    .box .value{font-weight:700; margin-top:4px;}
+    .section{margin-top: 14px;}
+    .tag{
+      display:inline-block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin: 6px 6px 0 0;
+      background: rgba(2,6,23,0.22);
+    }
+    .pub{
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(2,6,23,0.22);
+      margin-top: 10px;
+    }
+    .pub .venue{color: var(--muted); font-size: 0.9rem;}
+    footer{
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align:center;
+    }
+    .accent{color: var(--accent);}
+    .accent2{color: var(--accent2);}
+    .btnrow{display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 9px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.75);
+      color: var(--text);
+      font-weight: 650;
+    }
+    .btn:hover{border-color: rgba(56,189,248,0.8); text-decoration:none;}
   </style>
 </head>
+
 <body>
-  <h1>Hi, I'm Meggie!</h1>
-  <p>Welcome to my GitHub.io website!</p>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Hi, I’m Meggie Rajendran</h1>
+        <p class="subtitle">Solutions Architect @ NVIDIA (Singapore) · Computer Vision · Synthetic Data · Omniverse · Immersive Tech</p>
+        <div class="pillrow">
+          <span class="pill">Computer Vision</span>
+          <span class="pill">Synthetic Data Generation</span>
+          <span class="pill">NVIDIA Omniverse</span>
+          <span class="pill">Digital Twins</span>
+          <span class="pill">Human Activity Recognition</span>
+        </div>
+      </div>
+      <div class="btnrow">
+        <a class="btn" href="mailto:megani.raj7@gmail.com">Email</a>
+        <a class="btn" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn" href="#publications">Publications</a>
+      </div>
+    </header>
 
-  <div class="card">
-    <h2>About Me</h2>
-    <p>I am a learner.</p>
+    <div class="grid">
+      <main class="card">
+        <h2>About</h2>
+        <p>
+          I work on applied research and prototyping across <span class="accent">computer vision</span>,
+          <span class="accent">synthetic data generation</span>, and <span class="accent">immersive technologies</span>.
+          My focus includes end-to-end AI and simulation workflows, data pipelines, model integration, and 3D/immersive visualization.
+        </p>
+
+        <div class="kpi">
+          <div class="box">
+            <div class="label">Current role</div>
+            <div class="value">Solutions Architect, NVIDIA</div>
+          </div>
+          <div class="box">
+            <div class="label">Core areas</div>
+            <div class="value">SDG · CV · Omniverse · Digital Twins</div>
+          </div>
+          <div class="box">
+            <div class="label">Primary use cases</div>
+            <div class="value">Activity recognition · Simulation workflows</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Experience</h2>
+          <div class="pub">
+            <strong>Solutions Architect, NVAITC, NVIDIA (Singapore)</strong>
+            <div class="venue">2022 – Present</div>
+            <ul>
+              <li>Design and prototype end-to-end AI and simulation workflows, including data pipelines, model integration, and 3D/immersive visualization.</li>
+              <li>Work on solutions involving computer vision, synthetic data generation, NVIDIA Omniverse, and immersive technologies.</li>
+              <li>Collaborate with partners and teams to scope and deliver digital twin and activity recognition use cases.</li>
+              <li>Deliver technical workshops, demos, and enablement sessions on NVIDIA platforms and best practices.</li>
+            </ul>
+          </div>
+
+          <div class="pub">
+            <strong>Research Engineer, Centre for Immersification, Singapore Institute of Technology (Singapore)</strong>
+            <div class="venue">Dec 2021 – Jan 2022</div>
+            <ul>
+              <li>Worked on R&amp;D projects across immersive technologies, synthetic data, and computer vision.</li>
+              <li>Implemented and evaluated ML/CV components for immersive or activity recognition applications.</li>
+            </ul>
+          </div>
+
+          <div class="pub">
+            <strong>Software/ML Research Engineer Intern, Centre for Immersification, Singapore Institute of Technology (Singapore)</strong>
+            <div class="venue">Mar 2020 – Nov 2021</div>
+            <ul>
+              <li>Developed ML-powered software prototypes for real-time interactive and immersive applications.</li>
+              <li>Supported data processing and model training pipelines for activity recognition and related CV tasks.</li>
+              <li>Experimented with synthetic and real-world datasets to understand model robustness and performance.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Projects (Selected)</h2>
+          <ul>
+            <li><strong>SynthDa / SynDa</strong>: Synthetic human action data generation pipelines for activity recognition and immersive environments.</li>
+            <li><strong>AutoPose / AutoSynthDa</strong>: Pose-level augmentation and pose mixing for rare-action recognition and class imbalance.</li>
+            <li><strong>Omniverse workflows</strong>: USD-centric content pipelines and simulation-ready assets for applied use cases.</li>
+          </ul>
+          <p class="muted">If you would like links to specific repos or demos, add them to the list above (or send me your GitHub URLs and I’ll format them cleanly).</p>
+        </div>
+      </main>
+
+      <aside class="card">
+        <h2>Contact</h2>
+        <p class="muted">Email</p>
+        <ul>
+          <li><a href="mailto:mrajendran@nvidia.com">mrajendran@nvidia.com</a></li>
+          <li><a href="mailto:megani.raj7@gmail.com">megani.raj7@gmail.com</a></li>
+        </ul>
+
+        <div class="section">
+          <h2>Education</h2>
+          <div class="pub">
+            <strong>B.Sc. Computer Science (Real-Time Interactive Simulations)</strong>
+            <div class="venue">DigiPen Institute of Technology – Singapore Institute of Technology · 2021</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Focus Areas</h2>
+          <span class="tag">Human Activity Recognition</span>
+          <span class="tag">Synthetic Data</span>
+          <span class="tag">Omniverse / USD</span>
+          <span class="tag">Digital Twins</span>
+          <span class="tag">Immersive Tech</span>
+          <span class="tag">Model Evaluation</span>
+        </div>
+
+        <div class="section">
+          <h2>Selected Activities</h2>
+          <ul>
+            <li>Hands-on sessions and courses on metaverse technologies, synthetic data, and AI (including SIGGRAPH Asia and NVIDIA GTC).</li>
+            <li>Collaboration with students, interns, and cross-functional teams on CV and immersive prototyping.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <section id="publications" class="card" style="margin-top:14px;">
+      <h2>Selected Publications</h2>
+
+      <div class="pub">
+        <strong>AutoPose: pose-mixing for rare human video data augmentation to enhance recognition</strong>
+        <div class="venue">Multimedia Modeling (MMM) · 2026</div>
+      </div>
+
+      <div class="pub">
+        <strong>Advancing agentic AI: synthetic data for personified and inclusive human–AI interactions</strong>
+        <div class="venue">Workshop on Intelligent Immersification in the Metaverse: AI-Driven Immersive Multimedia · 2025</div>
+      </div>
+
+      <div class="pub">
+        <strong>Review on synergizing the metaverse and AI-driven synthetic data: enhancing virtual realms and activity recognition in computer vision</strong>
+        <div class="venue">Visual Intelligence · 2024</div>
+      </div>
+
+      <div class="pub">
+        <strong>Designing a usable framework for diverse users in synthetic human action data generation</strong>
+        <div class="venue">SIGGRAPH Asia Technical Communications · 2024</div>
+      </div>
+
+      <div class="pub">
+        <strong>SynthDa: exploiting existing real-world data for usable and accessible synthetic data generation</strong>
+        <div class="venue">SIGGRAPH Asia Technical Communications · 2023</div>
+      </div>
+
+      <div class="pub">
+        <strong>SynDa: a novel synthetic data generation pipeline for activity recognition</strong>
+        <div class="venue">IEEE ISMAR-Adjunct · 2022</div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Meggie Rajendran · Built with plain HTML/CSS · Hosted on GitHub Pages
+    </footer>
   </div>
 
-  <div class="card">
-    <h2>Projects</h2>
-    <ul>
-      <li>Project 1 – description</li>
-      <li>Project 2 – description</li>
-    </ul>
-  </div>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
